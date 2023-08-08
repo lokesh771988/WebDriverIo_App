@@ -12,7 +12,7 @@ jobs:
         - name: Install
           run: npm install
         - name: Test
-          run: npx wdio run .\\config\\wdio.bs.conf.js --spec .\\test\\specs\\classdemo.js
+          run: npx wdio run config\\wdio.bs.conf.js --spec .\\test\\specs\\classdemo.js
         - uses: actions/upload-artifact@v1
           if: failure()
          
