@@ -13,8 +13,8 @@ jobs:
           run: npm install
         - name: Test
           env:
-           BROWSERSTACK_USERNAME: ${{secrets.BS_NAME}}
-           BROWSERSTACK_ACCESS_KEY: ${{secrets.BS_KEY}}
+           BROWSERSTACK_USERNAME: testingtutorials_AShMp8
+           BROWSERSTACK_ACCESS_KEY: Bfgxaf2WsQVPpzLziuux
            run: 
             npx wdio run "$BROWSERSTACK_USERNAME" "$BROWSERSTACK_ACCESS_KEY" .\\config\\wdio.bs.conf.js --spec .\\test\\specs\\classdemo.js
         - uses: actions/upload-artifact@v1
