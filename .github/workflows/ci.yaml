@@ -13,7 +13,7 @@ jobs:
           run: npm install
         - name: Test
           env:
-           run: npx wdio run .\\config\\wdio.bs.conf.js --spec .\\test\\specs\\classdemo.js
+           run: npx wdio run .\\config\\wdio.android.conf.js --spec .\\test\\specs\\classdemo.js
            process.env.BROWSERSTACK_USERNAME: ${{secrets.BS_NAME}}
            process.env.BROWSERSTACK_ACCESS_KEY: ${{secrets.BS_KEY}}
         - uses: actions/upload-artifact@v1
