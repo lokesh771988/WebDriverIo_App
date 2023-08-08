@@ -1,8 +1,8 @@
 require('dotenv').config()
 
 exports.config = {
-    user: process.env.BROWSERSTACK_USERNAME || 'testingtutorials_AShMp8',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'Bfgxaf2WsQVPpzLziuux',
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
     hostname: 'hub.browserstack.com',
     services: [
       [

@@ -1,0 +1,20 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          with:
+            node-version: 18
+        - name: Install
+          run: npm install
+        - name: Test
+          process.env.BROWSERSTACK_USERNAME: ${{secrets.BS_NAME}}
+          process.env.BROWSERSTACK_ACCESS_KEY: ${{secrets.BS_KEY}}
+          run: npx wdio config/wdio.bs.conf.js --spec test/specs/classdemo.js
+        - uses: actions/upload-artifact@v1
+          if: failure()
+         
